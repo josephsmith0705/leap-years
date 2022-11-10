@@ -17,13 +17,17 @@ class LeapYearController extends Controller
             'year' => 'required|date_format:Y'
         ]);
 
-        switch(0)
+        $year = $request->year;
+
+        switch(true)
         {
-            case $request->year % 400:
-            case $request->year % 4:
+            case ($year % 400 == 0):
+            case ($year % 4 == 0 && $year % 100 != 0):
                 $isLeapYear = true;
+                break;
             default:
                 $isLeapYear = false;
+                break;
         }
 
         return view('home.index', [

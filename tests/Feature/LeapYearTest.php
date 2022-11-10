@@ -42,7 +42,7 @@ class LeapYearTest extends TestCase
     /** @test */
     public function validNotDivisibleBy4()
     {
-        $this->checkLeapYear('2000', false);
+        $this->checkLeapYear('2017', false);
     }
 
     /** @test */
